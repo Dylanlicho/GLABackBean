@@ -9,6 +9,7 @@ import auction.dao.UserDAO;
 import auction.dto.LoginDTO;
 import auction.dto.UserDTO;
 import auction.entities.UserEntity;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -28,8 +29,8 @@ public class UserService {
         return userDao.addUser(u);
     }
     
-    public UserEntity getUser(UserDTO u){
-        return userDao.getUser(u);
+    public UserEntity getUser(int id){
+        return userDao.getUser(id);
     }
     
     public int deleteUser(int id){
@@ -49,5 +50,9 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public List<UserEntity> getAllUser() {
+        return userDao.getAllUser();
     }
 }

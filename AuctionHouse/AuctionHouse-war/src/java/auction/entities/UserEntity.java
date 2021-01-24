@@ -6,12 +6,15 @@
 package auction.entities;
 
 import auction.dto.UserDTO;
+import java.util.Set;
+import javax.json.bind.annotation.JsonbVisibility;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,7 +24,10 @@ import javax.persistence.Table;
 @Entity
 @NamedQuery(name= "UserEntity.deleteOne", 
             query="DELETE FROM UserEntity ue WHERE ue.id = ?1")
-@Table(name = "USERS")
+@NamedQuery(name= "UserEntity.getAll", 
+            query="SELECT ue FROM UserEntity ue")
+
+@Table(name = "users")
 public class UserEntity  {
         
     @Id
@@ -33,12 +39,17 @@ public class UserEntity  {
     private String lastname;
     private String address;
     private String password;
-
+    
+    /*@OneToMany(mappedBy="seller")
+    private Set<ArticleEntity> articles;
+    */
+    
     public UserEntity(){}
 
     public UserEntity(UserDTO u) {
         this.id = u.getId();
         this.login = u.getLogin();
+        this.password = u.getPassword();
         this.firstname = u.getFirstname();
         this.lastname = u.getLastname();
         this.address = u.getAddress();

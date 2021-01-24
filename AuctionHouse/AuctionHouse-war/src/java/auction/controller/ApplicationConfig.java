@@ -12,7 +12,7 @@ import javax.ws.rs.core.Application;
  *
  * @author attuku
  */
-@javax.ws.rs.ApplicationPath("webresources")
+@javax.ws.rs.ApplicationPath("")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -29,7 +29,11 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(auction.controller.ArticleController.class);
+        resources.add(auction.controller.CategoryController.class);
+        resources.add(auction.controller.ParticipationController.class);
         resources.add(auction.controller.UserController.class);
+        resources.add(auction.filter.CorsFilter.class);
     }
     
 }

@@ -76,5 +76,5 @@ public class UserDTO {
     @XmlElement
     public void setPassword(String password) {
         this.password = password;
-    }  
+    }
 }

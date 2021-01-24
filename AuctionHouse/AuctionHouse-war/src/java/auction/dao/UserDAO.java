@@ -26,22 +26,22 @@ public class UserDAO {
     EntityManager em;
     
     public UserEntity addUser(UserDTO u) {
-        UserEntity ue = getUser(u);
+        UserEntity ue = getUserByLogin(u.getLogin());
         if (ue == null){
             ue = new UserEntity(u);
-            System.out.println("J'ajoute : "+u.getLogin());
             em.persist(ue);
         }
         return ue;
     }
 
-    public UserEntity getUser(UserDTO u) {
-        UserEntity v = null;
-        TypedQuery<UserEntity> query = em.createQuery("SELECT ue FROM UserEntity ue Where ue.login = '"+u.getLogin()+"' ", UserEntity.class);
-        System.out.println(query.getResultList().size());
-        if (query.getResultList().size() > 0)
-            v = query.getSingleResult();
+    public UserEntity getUser(int id) {
+        UserEntity v = em.find(UserEntity.class, id);
         return v;
+    }
+    
+    public List<UserEntity> getAllUser(){
+        Query query = em.createNamedQuery("UserEntity.getAll");
+        return query.getResultList();
     }
 
     public int deleteUser(int id){
@@ -53,7 +53,6 @@ public class UserDAO {
     public UserEntity getUserByLogin(String login) {
         UserEntity v = null;
         TypedQuery<UserEntity> query = em.createQuery("SELECT ue FROM UserEntity ue Where ue.login = '"+login+"' ", UserEntity.class);
-        System.out.println(query.getResultList().size());
         if (query.getResultList().size() > 0)
             v = query.getSingleResult();
         return v;

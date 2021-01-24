@@ -9,6 +9,7 @@ import auction.dto.LoginDTO;
 import auction.dto.UserDTO;
 import auction.entities.UserEntity;
 import auction.services.UserService;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
@@ -24,27 +25,43 @@ import javax.ws.rs.core.MediaType;
  *
  * @author attuku
  */
-@Path("user")
+
+@Path("")
 public class UserController {
 
     @EJB
     UserService userService;
     
     @DELETE
-    @Path("{id}")
+    @Path("user/{id}")
     @Consumes()
     public void deleteUser(@PathParam("id") int id){
         userService.deleteUser(id);
     }
     
     @GET
-    @Path("{login}")
-    @Consumes()
-    public UserEntity getUser(@PathParam("login") String login){
+    @Path("user/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserEntity getUser(@PathParam("id") int id){
+        return userService.getUser(id);
+    }
+
+    @GET
+    @Path("user/login/{login}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserEntity getUserByLogin(@PathParam("login") String login){
         return userService.getUserByLogin(login);
     }
     
+    @GET
+    @Path("users")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<UserEntity> getAllUser(){
+        return userService.getAllUser();
+    }
+    
     @POST
+    @Path("auth/register")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public UserEntity register(UserDTO userDTO) {
@@ -52,7 +69,7 @@ public class UserController {
     }
     
     @POST
-    @Path("verify")
+    @Path("auth/login")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public UserEntity verify(LoginDTO loginDTO) {
