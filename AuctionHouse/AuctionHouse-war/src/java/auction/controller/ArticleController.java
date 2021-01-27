@@ -43,7 +43,7 @@ public class ArticleController {
     @GET
     @Path("article/seller/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<ArticleEntity> getArticlesBySeller(@PathParam("userID") int id){
+    public List<ArticleEntity> getArticlesBySeller(@PathParam("userId") int id){
         return articleService.getArticlesBySeller(id);
     }
     

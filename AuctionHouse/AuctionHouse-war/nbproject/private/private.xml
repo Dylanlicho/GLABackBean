@@ -4,9 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/UserController.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/services/PromotionService.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/services/UserService.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/conf/persistence.xml</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/CategoryController.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dto/OrderDTO.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/services/DeliveryService.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/ParticipationController.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/ArticleController.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dto/UserDTO.java</file>

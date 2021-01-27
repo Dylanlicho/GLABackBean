@@ -11,8 +11,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import livraison.dto.OrderDTO;
+import javax.persistence.TypedQuery;
 import livraison.entity.OrderEntity;
+import serializable.OrderDTO;
 
 /**
  *
@@ -24,13 +25,23 @@ public class LivraisonService {
     @PersistenceContext(unitName="DeliveryPU")
     EntityManager em;
 
-    void add(OrderDTO order) {
+    public void add(OrderDTO order) {
+        TypedQuery<OrderEntity> query = em.createQuery("SELECT oe FROM OrderEntity oe"
+                                             + " WHERE oe.idArticle = "+order.getIdArticle(), OrderEntity.class);
+        if (query.getResultList().size() > 0)
+            return;
         OrderEntity oe = new OrderEntity(order);
         em.persist(oe);
     }
 
     public List<OrderEntity> getAll() {
         Query query = em.createNamedQuery("OrderEntity.getAll");
+        return query.getResultList();
+    }
+
+    public List<OrderEntity> getAllOrderOf(int buyer) {
+        TypedQuery<OrderEntity> query = em.createQuery("SELECT oe FROM OrderEntity oe"
+                                                     + " WHERE oe.buyer = "+buyer, OrderEntity.class);
         return query.getResultList();
     }
     

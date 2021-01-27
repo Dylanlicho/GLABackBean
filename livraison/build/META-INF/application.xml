@@ -4,7 +4,7 @@
   <module>
     <web>
       <web-uri>livraison-war.war</web-uri>
-      <context-root>/livraison-war</context-root>
+      <context-root>/delivery</context-root>
     </web>
   </module>
 </application>

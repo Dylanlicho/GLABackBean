@@ -10,6 +10,8 @@ import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import livraison.beans.LivraisonService;
 import livraison.entity.OrderEntity;
@@ -24,9 +26,16 @@ public class LivraisonController {
     LivraisonService livraisonService;
     
     @GET
-    @Path("livraison/{buyer}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("all")
+    @Produces(MediaType.APPLICATION_JSON)
     public List<OrderEntity> getAllOrder(){
         return livraisonService.getAll();
+    }
+    
+    @GET
+    @Path("{buyer}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<OrderEntity> getAllOrderOf(@PathParam("buyer") int buyer){
+        return livraisonService.getAllOrderOf(buyer);
     }
 }

@@ -13,7 +13,7 @@ import javax.ejb.MessageDrivenContext;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import livraison.dto.OrderDTO;
+import serializable.OrderDTO;
 
 /**
  *

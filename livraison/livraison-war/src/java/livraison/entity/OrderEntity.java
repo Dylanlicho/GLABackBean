@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import livraison.dto.OrderDTO;
+import serializable.OrderDTO;
 
 /**
  *
@@ -17,7 +17,7 @@ import livraison.dto.OrderDTO;
  */
 @Entity
 @NamedQuery(name="OrderEntity.getAll",
-            query="SELECT oe FROM OrderEntity oe Where oe.buyer = '?1'")
+            query="SELECT oe FROM OrderEntity oe")
 @Table(name="deliveries")
 public class OrderEntity {
     @Id
@@ -26,6 +26,8 @@ public class OrderEntity {
     private int buyer;
     private String address;
     private String date;
+    private int idArticle;
+    private String nameArticle;
 
     public OrderEntity(){}
     
@@ -33,8 +35,26 @@ public class OrderEntity {
         this.buyer = order.getBuyer();
         this.address = order.getAddress();
         this.date = order.getDate();
+        this.idArticle = order.getIdArticle();
+        this.nameArticle = order.getNameArticle();
     }
 
+    public int getIdArticle() {
+        return idArticle;
+    }
+
+    public void setIdArticle(int idArticle) {
+        this.idArticle = idArticle;
+    }
+
+    public String getNameArticle() {
+        return nameArticle;
+    }
+
+    public void setNameArticle(String nameArticle) {
+        this.nameArticle = nameArticle;
+    }
+    
     public int getBuyer() {
         return buyer;
     }

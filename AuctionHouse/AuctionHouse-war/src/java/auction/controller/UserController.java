@@ -6,7 +6,7 @@
 package auction.controller;
 
 import auction.dto.LoginDTO;
-import auction.dto.OrderDTO;
+import serializable.OrderDTO;
 import auction.dto.UserDTO;
 import auction.entities.UserEntity;
 import auction.services.DeliveryService;

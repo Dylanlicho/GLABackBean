@@ -34,7 +34,7 @@ import javax.persistence.TemporalType;
 @NamedQuery(name= "ArticleEntity.deleteOne", 
             query="DELETE FROM ArticleEntity art WHERE art.id = ?1")
 @NamedQuery(name="ArticleEntity.getBySeller", 
-            query="SELECT art FROM ArticleEntity art Where art.seller = ?1")
+            query="SELECT art FROM ArticleEntity art WHERE art.seller = ?1")
 @Table(name="articles")
 public class ArticleEntity {
     @Id

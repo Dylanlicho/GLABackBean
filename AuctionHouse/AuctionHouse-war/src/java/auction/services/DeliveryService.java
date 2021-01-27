@@ -5,7 +5,7 @@
  */
 package auction.services;
 
-import auction.dto.OrderDTO;
+import serializable.OrderDTO;
 import javax.annotation.Resource;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -28,5 +28,6 @@ public class DeliveryService {
     
     public void produce(OrderDTO orderDTO) {
         context.createProducer().send(orderAuctionQueue, orderDTO);
+        System.out.println("envoyé");
     }
 }

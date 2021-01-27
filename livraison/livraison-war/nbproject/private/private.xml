@@ -6,6 +6,7 @@
             <file>file:/home/attuku/Project/gla/livraison/livraison-war/src/java/livraison/controller/ApplicationConfig.java</file>
             <file>file:/home/attuku/Project/gla/livraison/livraison-war/src/java/livraison/beans/LivraisonService.java</file>
             <file>file:/home/attuku/Project/gla/livraison/livraison-war/src/conf/persistence.xml</file>
+            <file>file:/home/attuku/Project/gla/livraison/livraison-war/src/java/livraison/beans/OrderMDB.java</file>
         </group>
     </open-files>
 </project-private>

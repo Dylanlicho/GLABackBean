@@ -24,7 +24,7 @@ import javax.persistence.Table;
  */
 @Entity
 @NamedQuery(name= "CategoryEntity.getAll", 
-            query="SELECT ce.id, ce.name FROM CategoryEntity ce")
+            query="SELECT ce FROM CategoryEntity ce")
 @Table(name="categories")
 public class CategoryEntity {
     @Id

@@ -17,6 +17,8 @@ use deliveryDB;
 create table deliveries (
     id int not null auto_increment primary key,
     buyer int not null,
+    idArticle int not null,
+    nameArticle varchar(255) not null,
     date datetime not null,
     address varchar(255)
 );
