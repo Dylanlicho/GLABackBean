@@ -8,6 +8,9 @@ package auction.entities;
 import auction.dto.ParticipationDTO;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 /**
@@ -17,20 +20,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="participation")
 public class ParticipationEntity {
+    
     @Id
-    private int idUser;
-    @Id
-    private int idArticle;
+    int id;
+    
     private double price;
 
-    public ParticipationEntity(){}
-    
-    public ParticipationEntity(ParticipationDTO participationDTO){
-        this.idArticle = participationDTO.getIdArticle();
-        this.idUser = participationDTO.getIdUser();
-        this.price = participationDTO.getPrice();
-    }
-    
+    int idUser;
+
     public int getIdUser() {
         return idUser;
     }
@@ -39,14 +36,38 @@ public class ParticipationEntity {
         this.idUser = idUser;
     }
 
-    public int getIdArticle() {
-        return idArticle;
+
+    int idArticle;
+    
+    @ManyToOne
+    @MapsId("idUser")
+    @JoinColumn(name="idUser", updatable = false, insertable = false)
+    private UserEntity user;
+
+    @ManyToOne
+    @MapsId("idArticle")
+    @JoinColumn(name="idArticle", updatable = false, insertable = false)
+    private ArticleEntity article;
+
+    public ArticleEntity getArticle() {
+        return article;
     }
 
-    public void setIdArticle(int idArticle) {
-        this.idArticle = idArticle;
+    public void setArticle(ArticleEntity article) {
+        this.article = article;
     }
+    
 
+    
+    public ParticipationEntity(){}
+    
+    public ParticipationEntity(ParticipationDTO participationDTO){
+        this.idArticle = participationDTO.getIdArticle();
+        this.idUser = participationDTO.getIdUser();
+        this.price = participationDTO.getPrice();
+    }
+    
+    
     public double getPrice() {
         return price;
     }

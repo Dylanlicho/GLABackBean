@@ -70,7 +70,7 @@ public class ArticleController {
     }
     
     @GET
-    @Path("article/promotions")
+    @Path("promotions")
     @Produces(MediaType.APPLICATION_JSON)
     public List<PromotionEntity> getArticleInPromotion(){
         return promotionService.getPromotions(); 

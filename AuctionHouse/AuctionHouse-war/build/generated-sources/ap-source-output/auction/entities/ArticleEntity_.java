@@ -1,6 +1,7 @@
 package auction.entities;
 
 import auction.entities.CategoryEntity;
+import auction.entities.ParticipationEntity;
 import auction.entities.PromotionEntity;
 import java.util.Date;
 import javax.annotation.Generated;
@@ -8,7 +9,7 @@ import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2021-01-24T19:17:08")
+@Generated(value="EclipseLink-2.7.7.v20200504-rNA", date="2021-01-27T12:46:20")
 @StaticMetamodel(ArticleEntity.class)
 public class ArticleEntity_ { 
 
@@ -22,5 +23,6 @@ public class ArticleEntity_ {
     public static volatile SetAttribute<ArticleEntity, CategoryEntity> categories;
     public static volatile SingularAttribute<ArticleEntity, Date> startDate;
     public static volatile SingularAttribute<ArticleEntity, PromotionEntity> promotion;
+    public static volatile SetAttribute<ArticleEntity, ParticipationEntity> participants;
 
 }

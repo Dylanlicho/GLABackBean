@@ -56,11 +56,14 @@ public class ArticleEntity {
     private Date endDate;
     private double weight;
 
-    @ManyToMany
+    @ManyToMany // Article * --- * Category
     Set<CategoryEntity> categories;
     
     @OneToOne(mappedBy="article", fetch = FetchType.LAZY)
     PromotionEntity promotion;
+    
+    @OneToMany(mappedBy="article")
+    Set<ParticipationEntity> participants;
     
     public ArticleEntity(){}
     

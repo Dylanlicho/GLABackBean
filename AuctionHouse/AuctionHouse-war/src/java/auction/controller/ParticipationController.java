@@ -37,7 +37,7 @@ public class ParticipationController {
     }
 
     @GET
-    @Path("participatsion/user/{id}")
+    @Path("participation/user/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<ArticleEntity> ParticipationByIdUser(@PathParam("id") int idUser){
         return participationService.ParticipationByIdUser(idUser);

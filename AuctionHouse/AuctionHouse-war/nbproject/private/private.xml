@@ -3,14 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dao/ParticipationDAO.java</file>
-            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/UserController.java</file>
-            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/OfCategoryEntity.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/UserEntity.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/services/PromotionService.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/ArticleEntity.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/ParticipationEntity.java</file>
-            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/ParticipationController.java</file>
-            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/ApplicationConfig.java</file>
             <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/services/ParticipationService.java</file>
-            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dto/ParticipationDTO.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dao/ArticleDAO.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dao/UserDAO.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dao/ParticipationDAO.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/PromotionEntity.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/CategoryEntity.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/entities/OfCategoryEntity.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/dao/CategoryDAO.java</file>
+            <file>file:/home/attuku/Project/gla/AuctionHouse/AuctionHouse-war/src/java/auction/controller/CategoryController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -8,7 +8,9 @@ package auction.dao;
 import auction.dto.ParticipationDTO;
 import auction.entities.ArticleEntity;
 import auction.entities.ParticipationEntity;
+import auction.entities.UserEntity;
 import java.util.List;
+import java.util.Set;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -63,6 +65,9 @@ public class ParticipationDAO {
     }
 
     public List<ArticleEntity> participationByIdUser(int idUser) {
-        return null;
+        TypedQuery<ArticleEntity> query = em.createQuery("SELECT pae.article "
+                                                     + "FROM ParticipationEntity pae "
+                                                     + "Where pae.idUser = "+idUser+" ", ArticleEntity.class);
+        return query.getResultList();
     }
 }

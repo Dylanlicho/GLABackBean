@@ -6,10 +6,13 @@
 package auction.controller;
 
 import auction.dto.LoginDTO;
+import auction.dto.OrderDTO;
 import auction.dto.UserDTO;
 import auction.entities.UserEntity;
+import auction.services.DeliveryService;
 import auction.services.UserService;
 import java.util.List;
+import javax.ejb.Asynchronous;
 import javax.ejb.EJB;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
@@ -31,6 +34,8 @@ public class UserController {
 
     @EJB
     UserService userService;
+    @EJB
+    DeliveryService deliveryService;
     
     @DELETE
     @Path("user/{id}")
@@ -75,4 +80,13 @@ public class UserController {
     public UserEntity verify(LoginDTO loginDTO) {
         return userService.verify(loginDTO);
     }
+    
+    @POST
+    @Path("addDelivery")
+    @Asynchronous
+    public int addDelivery(OrderDTO orderDTO){
+        deliveryService.produce(orderDTO);
+        return 0;
+    }
+    
 }

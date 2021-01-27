@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.json.bind.annotation.JsonbVisibility;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,6 +27,8 @@ import javax.persistence.Table;
             query="DELETE FROM UserEntity ue WHERE ue.id = ?1")
 @NamedQuery(name= "UserEntity.getAll", 
             query="SELECT ue FROM UserEntity ue")
+@NamedQuery(name= "UserEntity.getParticipations", 
+            query="SELECT ue.participations FROM UserEntity ue")
 
 @Table(name = "users")
 public class UserEntity  {
@@ -44,6 +47,9 @@ public class UserEntity  {
     private Set<ArticleEntity> articles;
     */
     
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    Set<ParticipationEntity> participations;
+
     public UserEntity(){}
 
     public UserEntity(UserDTO u) {
@@ -103,4 +109,13 @@ public class UserEntity  {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Set<ParticipationEntity> getParticipations() {
+        return participations;
+    }
+
+    public void setParticipations(Set<ParticipationEntity> participations) {
+        this.participations = participations;
+    }
+    
 }

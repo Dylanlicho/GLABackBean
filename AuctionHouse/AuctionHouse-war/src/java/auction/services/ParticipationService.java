@@ -10,6 +10,7 @@ import auction.dto.ParticipationDTO;
 import auction.entities.ArticleEntity;
 import auction.entities.ParticipationEntity;
 import java.util.List;
+import java.util.Set;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
