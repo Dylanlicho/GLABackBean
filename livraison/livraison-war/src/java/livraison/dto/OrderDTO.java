@@ -12,15 +12,15 @@ import java.io.Serializable;
  * @author attuku
  */
 public class OrderDTO implements Serializable {
-    private String buyer;
+    private int buyer;
     private String address;
     private String date;
 
-    public String getBuyer() {
+    public int getBuyer() {
         return buyer;
     }
 
-    public void setBuyer(String buyer) {
+    public void setBuyer(int buyer) {
         this.buyer = buyer;
     }
 
@@ -39,4 +39,5 @@ public class OrderDTO implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
 }

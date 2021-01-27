@@ -21,7 +21,7 @@ import livraison.entity.OrderEntity;
 @Stateless
 @LocalBean
 public class LivraisonService {
-    @PersistenceContext(unitName="LivraisonPU")
+    @PersistenceContext(unitName="DeliveryPU")
     EntityManager em;
 
     void add(OrderDTO order) {

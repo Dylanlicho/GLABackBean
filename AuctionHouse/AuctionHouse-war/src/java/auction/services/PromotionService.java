@@ -30,7 +30,7 @@ public class PromotionService {
     @EJB
     private ArticleDAO articleDAO;
     
-    @PersistenceContext(unitName="UserPU")
+    @PersistenceContext(unitName="AuctionPU")
     EntityManager em;
 
     

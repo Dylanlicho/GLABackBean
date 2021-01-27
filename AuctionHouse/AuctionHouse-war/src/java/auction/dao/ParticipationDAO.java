@@ -8,9 +8,7 @@ package auction.dao;
 import auction.dto.ParticipationDTO;
 import auction.entities.ArticleEntity;
 import auction.entities.ParticipationEntity;
-import auction.entities.UserEntity;
 import java.util.List;
-import java.util.Set;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -24,7 +22,7 @@ import javax.persistence.TypedQuery;
 @Stateless
 @LocalBean
 public class ParticipationDAO {
-    @PersistenceContext(unitName="UserPU")
+    @PersistenceContext(unitName="AuctionPU")
     EntityManager em;
     
     public ParticipationEntity bestParticipationByIdArticle(int idArticle) {
@@ -39,13 +37,13 @@ public class ParticipationDAO {
             ret = query.getSingleResult();
         return ret;
     }
-
+    
     public ParticipationEntity createParticipation(ParticipationDTO participationDTO) {
         ParticipationEntity ret = new ParticipationEntity(participationDTO);
         em.persist(ret);
         return ret;
     }
-    
+   
     
     public ParticipationEntity updateParticipation(ParticipationDTO participationDTO) {
         int idArticle = participationDTO.getIdArticle();
@@ -60,7 +58,7 @@ public class ParticipationDAO {
             ret.setPrice(participationDTO.getPrice());
             em.merge(ret);
         } else
-            em.persist(ret);
+            createParticipation(participationDTO);
         return ret;
     }
 

@@ -18,11 +18,12 @@ import livraison.dto.OrderDTO;
 @Entity
 @NamedQuery(name="OrderEntity.getAll",
             query="SELECT oe FROM OrderEntity oe Where oe.buyer = '?1'")
-
-@Table(name="order")
+@Table(name="deliveries")
 public class OrderEntity {
     @Id
-    private String buyer;
+    private int id;
+    
+    private int buyer;
     private String address;
     private String date;
 
@@ -34,11 +35,11 @@ public class OrderEntity {
         this.date = order.getDate();
     }
 
-    public String getBuyer() {
+    public int getBuyer() {
         return buyer;
     }
 
-    public void setBuyer(String buyer) {
+    public void setBuyer(int buyer) {
         this.buyer = buyer;
     }
 
@@ -57,5 +58,4 @@ public class OrderEntity {
     public void setDate(String date) {
         this.date = date;
     }
-
 }

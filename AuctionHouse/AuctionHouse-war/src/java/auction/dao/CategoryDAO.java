@@ -22,7 +22,7 @@ import javax.persistence.Query;
 @Stateless
 @LocalBean
 public class CategoryDAO {
-    @PersistenceContext(unitName="UserPU")
+    @PersistenceContext(unitName="AuctionPU")
     EntityManager em;
     
     public List<CategoryEntity> getAll() {

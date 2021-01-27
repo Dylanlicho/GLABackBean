@@ -24,7 +24,7 @@ import javax.persistence.TypedQuery;
 @Stateless
 @LocalBean
 public class ArticleDAO {
-    @PersistenceContext(unitName="UserPU")
+    @PersistenceContext(unitName="AuctionPU")
     EntityManager em;
     
     public List<ArticleEntity> getAllArticle() {

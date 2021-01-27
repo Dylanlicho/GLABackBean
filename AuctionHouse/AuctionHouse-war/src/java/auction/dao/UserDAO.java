@@ -22,7 +22,7 @@ import javax.persistence.TypedQuery;
 @Stateless
 @LocalBean
 public class UserDAO {
-    @PersistenceContext(unitName="UserPU")
+    @PersistenceContext(unitName="AuctionPU")
     EntityManager em;
     
     public UserEntity addUser(UserDTO u) {
